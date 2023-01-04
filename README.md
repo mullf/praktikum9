@@ -1,5 +1,4 @@
- # Praktikum 9 
- # Praktikum 9
+# Praktikum 9
  ## Exception Handling
  - *Exception* (eksepsi) merupakan suatu kesalahan *(error)* yang terjadi saat proses eksekusi program sedang berjalan,
  - Kesalahan ini akan menyebabkan program berakhir dengan tidak normal.
