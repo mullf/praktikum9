@@ -18,19 +18,45 @@ kecuali pernyataan, tetapi jika dibiarkan, mereka akan menghentikan program dan 
 #### Contoh
 - Berikut adalah fungsi fungsi yang mengubah suhu dari derajat Kelvin menjadi derajat Fahrenheit.Karena nol derajat Kelvin dingin, fungsi fungsi menyimpannya jika melihat negatif negatif suhu.
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
+```
+def KelvinFahrenheit(Temperature):
+    assert (Temperature >= 0),"Colder than absolute zero!"
+    return ((Temperature-273)*1.8)+32
+print(KelvinToFahrenheit(273))
+print(int(KelvinToFahrenheit(505.78)))
+print(KelvvinToFahrenheit(-5)
+```
 
-![gambar](pr9/9.1.png)
+![gambar](prak9_1.png)
 
 ### Menangani Pengecualian
 Jika Anda memiliki beberapa kode mencurigakan yang mungkin mengeluarkan pengecualian, Anda dapat mempertahankan program Anda letakkan kode yang mencurigakan di **try: blok**. Setelah coba: blok, sertakan pernyataan sertakan **except:** statemen, diikuti oleh blok kode yang menangani masalah seanggun mungkin.
 #### Contoh
 - Contoh-contoh ini membuka file, menulis konten file, dan keluar dengan aman karena ada tidak masalah
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
+```
+def KelvinFahrenheit(Temperature):
+    assert (Temperature >= 0),"Colder than absolute zero!"
+    return ((Temperature-273)*1.8)+32
+print(KelvinToFahrenheit(273))
+print(int(KelvinToFahrenheit(505.78)))
+print(KelvvinToFahrenheit(-5)
+```
 
 ![gambar](pr9/9.2.png)
 
 - Contoh ini mencoba membuka file yang Anda tidak memiliki izin menulis, sehingga membuat file pengecualian
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
+```
+try:
+    fh = open("testfile", "r")
+    fh.write("This is my test ile for exception handling!!")
+except IOError:
+    print("Error : cant\'t find file or read data")
+else:
+    print("Written content in the file successfully")
+    fh.close()
+```
 
 ![gambar](pr9/9.3.png)
 
@@ -63,8 +89,28 @@ If there is no exception then execute this block.
 ### Klausa coba-akhirnya
 #### Contoh
 - Jika Anda tidak memiliki izin untuk membuka file dalam mode tulis yang dapat ditulis, maka ini akan menghasilkan hasil berikut:
-![9 4 1](https://user-images.githubusercontent.com/115551911/207681346-73508e3b-a892-4b29-9ca8-77d3d1ef3916.png)
+```
+try:
+    fh = open("testfile", "w")
+    fh.write("This is my test ile for exception handling!!")
+finally:
+    print("Error : can\'t find file or read data")
+```
+
+![gambar](gambar/ok4.png)
+
 - Contoh yang sama dapat ditulis lebih bersih sebagai berikut:
+```
+try:
+    fh = open("testfile", "r")
+    try:
+    fh.write("This is my test ile for exception handling!!")
+    finally:
+        print("going to close the file")
+        fh.close()
+except IOError:
+    print("Error : can\'t find file or read data")
+```
 
 ![gambar](pr9/9.4.png)
 
@@ -78,7 +124,21 @@ Ketika exception dilempar ke dalam blok try, eksekusi segera dilanjutkan ke akhi
 
 ### Melempar Pengecualian
 #### Contoh
-- Pengecualian dapat berupa string, kelas, atau objek. Sebagian besar pengecualian adalah pengecualian dari inti Python menimbulkan adalah kelas, dengan argumen=argumen yang merupakan turunan dari kelas. Mendefinisikan pengecualian barucukup mudah dan dapat dilakukan sebagai berikut:
+- Pengecualian dapat berupa string, kelas, atau objek. Sebagian besar pengecualian adalah pengecualian dari inti Python menimbulkan adalah kelas, dengan argumen=argumen yang merupakan turunan dari kelas. Mendefinisikan pengecualian baru cukup mudah dan dapat dilakukan sebagai berikut:
+#### > Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
+```
+# Drfine a function here.
+
+def temp_convert(var):
+    try:
+        return int(var)
+    except ValueError(Argument):
+        print("The argument does not contain numbers\n", Argument)
+
+# Call above function here.
+
+temp_convert("xyz")
+```
 
 ![gambar](pr9/9.6.png)
 
@@ -86,5 +146,13 @@ Ketika exception dilempar ke dalam blok try, eksekusi segera dilanjutkan ke akhi
 - Python juga memungkinkan Anda membuat pengecualian sendiri dengan menurunkan kelas-kelas dari yang standar pengecualian bawaan.
 - Berikut adalah contoh-contoh yang terkait dengan RuntimeError. Di sini, kelas dibuat yang merupakan subkelas dari subkelas RuntimeError. Ini berguna saat Anda perlumenampilkan tampilan informasi yang lebih spesifik saat e pengecualian tertangkap.
 - Di blok coba, pengecualian yang ditentukan pengguna dimunculkan dan ditangkap di blok kecuali. Itu variabel e digunakan untuk membuat instance dari kelas Networkerror.
-
+```
+class Networkerror(RuntimeError):
+    def __init__(self, arg):
+        self.arg = arg
+try:
+    raise Networkerror("Bad hostname")
+except Networkerror(e):
+    print(e.args)
+```
 ![gambar](pr9/9.7.png)
