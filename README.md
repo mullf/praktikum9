@@ -99,7 +99,7 @@ finally:
     print("Error : can\'t find file or read data")
 ```
 
-![gambar](gambar/ok4.png)
+![gambar](gambar/ok.png)
 
 - Contoh yang sama dapat ditulis lebih bersih sebagai berikut:
 ```
@@ -121,13 +121,6 @@ Ketika exception dilempar ke dalam blok try, eksekusi segera dilanjutkan ke akhi
 #### Contoh
 - Berikut adalah contoh untuk satu pengecualian
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
-
-![gambar](pr9/9.5.png)
-
-### Melempar Pengecualian
-#### Contoh
-- Pengecualian dapat berupa string, kelas, atau objek. Sebagian besar pengecualian adalah pengecualian dari inti Python menimbulkan adalah kelas, dengan argumen=argumen yang merupakan turunan dari kelas. Mendefinisikan pengecualian baru cukup mudah dan dapat dilakukan sebagai berikut:
-#### > Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
 ```
 # Drfine a function here.
 
@@ -140,6 +133,20 @@ def temp_convert(var):
 # Call above function here.
 
 temp_convert("xyz")
+```
+
+![gambar](pr9/9.5.png)
+
+### Melempar Pengecualian
+#### Contoh
+- Pengecualian dapat berupa string, kelas, atau objek. Sebagian besar pengecualian adalah pengecualian dari inti Python menimbulkan adalah kelas, dengan argumen=argumen yang merupakan turunan dari kelas. Mendefinisikan pengecualian baru cukup mudah dan dapat dilakukan sebagai berikut:
+#### > Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
+```
+def FunctionName( level ):
+    if level < 1:
+        raise("Invalid level1!", level)
+        # the code below to this would not be executed
+        # if we raise the exception
 ```
 
 ![gambar](pr9/9.6.png)
