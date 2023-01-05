@@ -99,7 +99,7 @@ finally:
     print("Error : can\'t find file or read data")
 ```
 
-![gambar1](gambar/prak9_4.png)
+![gambar1](gambar/prak9_3.png)
 
 - Contoh yang sama dapat ditulis lebih bersih sebagai berikut:
 ```
