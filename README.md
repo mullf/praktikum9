@@ -27,7 +27,7 @@ print (int(KelvinToFahrenheit(505.78)))
 print (KelvinToFahrenheit(-5))
 ```
 
-![gambar](prak9_1.png)
+![gambar1](gambar/prak9_1.png)
 
 ### Menangani Pengecualian
 Jika Anda memiliki beberapa kode mencurigakan yang mungkin mengeluarkan pengecualian, Anda dapat mempertahankan program Anda letakkan kode yang mencurigakan di **try: blok**. Setelah coba: blok, sertakan pernyataan sertakan **except:** statemen, diikuti oleh blok kode yang menangani masalah seanggun mungkin.
@@ -45,7 +45,7 @@ else:
     fh.close()
 ```
 
-![gambar](prak9_2.png)
+![gambar](gambar/prak9_2.png)
 
 - Contoh ini mencoba membuka file yang Anda tidak memiliki izin menulis, sehingga membuat file pengecualian
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
@@ -60,7 +60,7 @@ else:
     fh.close()
 ```
 
-![gambar](prak9_3.png)
+![gambar](gambar/prak9_3.png)
 
 ### Fasal kecuali tanpa Pengecualian
 - Anda juga dapat menggunakan pernyataan exception tanpa exception yang didefinisikan sebagai berikut:
@@ -99,14 +99,14 @@ finally:
     print("Error : can\'t find file or read data")
 ```
 
-![gambar](gambar/ok.png)
+![gambar1](gambar/prak9_4.png)
 
 - Contoh yang sama dapat ditulis lebih bersih sebagai berikut:
 ```
 try:
     fh = open("testfile", "r")
     try:
-    fh.write("This is my test ile for exception handling!!")
+        fh.write("This is my test ile for exception handling!!")
     finally:
         print("going to close the file")
         fh.close()
@@ -114,7 +114,7 @@ except IOError:
     print("Error : can\'t find file or read data")
 ```
 
-![gambar](pr9/9.4.png)
+![gambar1](gambar/prak9_5.png)
 
 Ketika exception dilempar ke dalam blok try, eksekusi segera dilanjutkan ke akhir memblok. Setelah semua pernyataan di blok akhirnya dieksekusi, pengecualian dimunculkan lagi dan ditangani dalam pernyataan kecuali jika ada di lapisan berikutnya yang lebih tinggi dari percobaan-kecuali penyataan.
 ### Argumen Pengecualian
@@ -135,7 +135,7 @@ def temp_convert(var):
 temp_convert("xyz")
 ```
 
-![gambar](pr9/9.5.png)
+![gambar1](gambar/prak9_6.png)
 
 ### Melempar Pengecualian
 #### Contoh
@@ -149,7 +149,7 @@ def FunctionName( level ):
         # if we raise the exception
 ```
 
-![gambar](pr9/9.6.png)
+![gambar1](gambar/prak9_7.png)
 
 ### Pengecualian yang Ditetapkan Pengguna
 - Python juga memungkinkan Anda membuat pengecualian sendiri dengan menurunkan kelas-kelas dari yang standar pengecualian bawaan.
@@ -164,4 +164,5 @@ try:
 except Networkerror(e):
     print(e.args)
 ```
-![gambar](pr9/9.7.png)
+
+![gambar1](gambar/prak9_8.png)
