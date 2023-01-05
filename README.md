@@ -158,7 +158,7 @@ def FunctionName( level ):
 ```
 class Networkerror(RuntimeError):
     def __init__(self, arg):
-        self.arg = arg
+        self.args = arg
 try:
     raise Networkerror("Bad hostname")
 except Networkerror(e):
