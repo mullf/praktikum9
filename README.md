@@ -114,7 +114,7 @@ except IOError:
     print("Error : can\'t find file or read data")
 ```
 
-![gambar1](gambar/prak9_5.png)
+![gambar1](gambar/prak9_4.png)
 
 Ketika exception dilempar ke dalam blok try, eksekusi segera dilanjutkan ke akhir memblok. Setelah semua pernyataan di blok akhirnya dieksekusi, pengecualian dimunculkan lagi dan ditangani dalam pernyataan kecuali jika ada di lapisan berikutnya yang lebih tinggi dari percobaan-kecuali penyataan.
 ### Argumen Pengecualian
@@ -135,7 +135,7 @@ def temp_convert(var):
 temp_convert("xyz")
 ```
 
-![gambar1](gambar/prak9_6.png)
+![gambar1](gambar/prak9_5.png)
 
 ### Melempar Pengecualian
 #### Contoh
@@ -149,7 +149,7 @@ def FunctionName( level ):
         # if we raise the exception
 ```
 
-![gambar1](gambar/prak9_7.png)
+![gambar1](gambar/prak9_6.png)
 
 ### Pengecualian yang Ditetapkan Pengguna
 - Python juga memungkinkan Anda membuat pengecualian sendiri dengan menurunkan kelas-kelas dari yang standar pengecualian bawaan.
@@ -165,4 +165,4 @@ except Networkerror(e):
     print(e.args)
 ```
 
-![gambar1](gambar/prak9_8.png)
+![gambar1](gambar/prak9_7.png)
