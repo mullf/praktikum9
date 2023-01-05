@@ -35,15 +35,17 @@ Jika Anda memiliki beberapa kode mencurigakan yang mungkin mengeluarkan pengecua
 - Contoh-contoh ini membuka file, menulis konten file, dan keluar dengan aman karena ada tidak masalah
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
 ```
-def KelvinFahrenheit(Temperature):
-    assert (Temperature >= 0),"Colder than absolute zero!"
-    return ((Temperature-273)*1.8)+32
-print(KelvinToFahrenheit(273))
-print(int(KelvinToFahrenheit(505.78)))
-print(KelvvinToFahrenheit(-5)
+try:
+    fh = open("testfile", "w")
+    fh.write("This is my test ile for exception handling!!")
+except IOError:
+    print("Error : cant\'t find file or read data")
+else:
+    print("Written content in the file successfully")
+    fh.close()
 ```
 
-![gambar](pr9/9.2.png)
+![gambar](prak9_2.png)
 
 - Contoh ini mencoba membuka file yang Anda tidak memiliki izin menulis, sehingga membuat file pengecualian
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
@@ -58,7 +60,7 @@ else:
     fh.close()
 ```
 
-![gambar](pr9/9.3.png)
+![gambar](prak9_3.png)
 
 ### Fasal kecuali tanpa Pengecualian
 - Anda juga dapat menggunakan pernyataan exception tanpa exception yang didefinisikan sebagai berikut:
