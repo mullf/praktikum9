@@ -19,12 +19,12 @@ kecuali pernyataan, tetapi jika dibiarkan, mereka akan menghentikan program dan 
 - Berikut adalah fungsi fungsi yang mengubah suhu dari derajat Kelvin menjadi derajat Fahrenheit.Karena nol derajat Kelvin dingin, fungsi fungsi menyimpannya jika melihat negatif negatif suhu.
 - Ketika kode di bawah dijalankan, menghasilkan hasil sebagai berikut:
 ```
-def KelvinFahrenheit(Temperature):
+def KelvinToFahrenheit(Temperature):
     assert (Temperature >= 0),"Colder than absolute zero!"
     return ((Temperature-273)*1.8)+32
-print(KelvinToFahrenheit(273))
-print(int(KelvinToFahrenheit(505.78)))
-print(KelvvinToFahrenheit(-5)
+print (KelvinToFahrenheit(273))
+print (int(KelvinToFahrenheit(505.78)))
+print (KelvinToFahrenheit(-5))
 ```
 
 ![gambar](prak9_1.png)
